@@ -1,0 +1,37 @@
+### Hae kaikki kissat
+GET http://localhost:3000/api/v1/cats
+
+### Hae yksi kissa ID:llä
+GET http://localhost:3000/api/v1/cats/1
+
+### Lisää uusi kissa
+POST http://localhost:3000/api/v1/cats
+Content-Type: application/json
+
+{
+  "name": "Karvinen",
+  "birthdate": "2018-02-15",
+  "weight": 8.5,
+  "owner": "Esko",
+  "image": "https://loremflickr.com/320/240/cat"
+}
+
+### Päivitä kissa ID:llä 1
+PUT http://localhost:3000/api/v1/cats/1
+Content-Type: application/json
+
+{
+  "name": "Misu Päivitetty"
+}
+
+### Poista kissa ID:llä 1
+DELETE http://localhost:3000/api/v1/cats/1
+
+
+### --- KÄYTTÄJÄT ---
+
+### Hae kaikki käyttäjät
+GET http://localhost:3000/api/v1/users
+
+### Hae yksi käyttäjä ID:llä
+GET http://localhost:3000/api/v1/users/3609

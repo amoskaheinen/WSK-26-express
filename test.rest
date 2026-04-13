@@ -1,37 +1,25 @@
-### Hae kaikki kissat
-GET http://localhost:3000/api/v1/cats
+POST http://127.0.0.1:3000/api/v1/cats HTTP/1.1
+Content-Type: multipart/form-data; boundary=MyBoundary
 
-### Hae yksi kissa ID:llä
-GET http://localhost:3000/api/v1/cats/1
+--MyBoundary
+Content-Disposition: form-data; name="cat_name"
 
-### Lisää uusi kissa
-POST http://localhost:3000/api/v1/cats
-Content-Type: application/json
+Misu
+--MyBoundary
+Content-Disposition: form-data; name="weight"
 
-{
-  "name": "Karvinen",
-  "birthdate": "2018-02-15",
-  "weight": 8.5,
-  "owner": "Esko",
-  "image": "https://loremflickr.com/320/240/cat"
-}
+6
+--MyBoundary
+Content-Disposition: form-data; name="owner"
 
-### Päivitä kissa ID:llä 1
-PUT http://localhost:3000/api/v1/cats/1
-Content-Type: application/json
+3602
+--MyBoundary
+Content-Disposition: form-data; name="birthdate"
 
-{
-  "name": "Misu Päivitetty"
-}
+2023-10-08
+--MyBoundary
+Content-Disposition: form-data; name="cat"; filename="dog.jpg"
+Content-Type: image/jpeg
 
-### Poista kissa ID:llä 1
-DELETE http://localhost:3000/api/v1/cats/1
-
-
-### --- KÄYTTÄJÄT ---
-
-### Hae kaikki käyttäjät
-GET http://localhost:3000/api/v1/users
-
-### Hae yksi käyttäjä ID:llä
-GET http://localhost:3000/api/v1/users/3609
+< ./dog.jpg
+--MyBoundary--
